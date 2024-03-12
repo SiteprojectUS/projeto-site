@@ -1,0 +1,502 @@
+/*lista de texto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav {
+    background-color: #CC1233;
+    text-align: left;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+}
+
+nav ul {
+    display: inline-flex;
+    list-style: none;
+    justify-content: center;
+}
+
+nav ul li {
+    width: 120px;
+    margin: 5px;
+    padding: 12px;
+    align-items: center;
+}
+
+nav ul li #itens-colection {
+    top: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    flex: 1;
+}
+
+nav ul li a img {
+    width: 70px;
+    padding: 6px;
+    margin-top: -15px;
+}
+
+.sub-menu-1 {
+    display: none;
+}
+
+nav ul li:hover .sub-menu-1 {
+    display: block;
+    position: absolute;
+    background-color: #CC1233;
+    margin-top: 15px;
+    margin-left: -38px;
+}
+
+nav ul li:hover .sub-menu-1 ul {
+    display: block;
+}
+
+nav ul li:hover .sub-menu-1 ul li {
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.7s;
+}
+
+nav ul li:hover .sub-menu-1 ul li:hover {
+    background-color: #990c26;
+}
+
+.sub-menu-2 {
+    display: none;
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
+.hover-sub:hover .sub-menu-2 {
+    display: block;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 140px;
+    background-color: #CC1233;
+
+}
+
+/*busca*/
+.container {
+    display: flex;
+    align-items: right;
+    width: 170px;
+    border-radius: 5px;
+    margin-top: -6px;
+    margin-left: 5px;
+}
+
+.container .search {
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search input {
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 16px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search .icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: hsl(349, 84%, 44%);
+    cursor: pointer;
+}
+
+/*pedidos*/
+#list-order {
+    margin-left: 75px;
+    margin-top: 12px;
+}
+
+#order {
+    background-color: white;
+    width: 400px;
+    border: 1px solid #CC1233;
+    border-style: groove;
+    font-size: 13px;
+    position: absolute;
+    position: fixed;
+    top: 80px;
+    right: 0px;
+    display: none;
+    flex-direction: column; /* Adicione esta linha para garantir que os itens empilhem verticalmente */
+    padding: 5px;
+}
+#orderList {
+    max-height: 300px; /* Defina uma altura máxima */
+    overflow-y: auto; /* Adicione rolagem vertical se necessário */
+    padding: 10px;
+    margin: 0; /* Remova a margem padrão para evitar espaçamento indesejado */
+}
+
+#order h2 {
+    padding: 15px;
+}
+
+#order ul {
+    list-style-type: none; 
+    padding: 10px; 
+}
+
+#order ul li {
+    margin-bottom: 5px; 
+    padding: 10px;
+    left: 0px;
+ 
+
+}
+
+#order li {
+    margin-bottom: 5px; 
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    list-style: none; /* Remover os pontos de lista */
+    max-height: 300px;
+}
+
+.counter-style {
+    background-color: #4CAF50;  
+    color: white;               
+    padding: 4px 8px;           
+    border-radius: 4px; 
+    padding: 5px;
+            
+}
+
+.counter-buttons {
+    font-size: 15px;
+    align-items: center;
+    padding-right: 5px;
+    width: 20px;
+    margin: 5px;
+}
+
+.counter-buttons {
+    font-size: 16px;
+    width: 15px;
+    border: none;
+}
+
+.increase-button {
+    font-size: 20px;
+    color: rgb(0, 51, 128); 
+}
+
+.decrease-button {
+    font-size: 20px; 
+    color: red; 
+}
+
+.delete-button {
+    font-size: 10px; 
+    width: 27px;
+    margin: 5px;
+
+}
+
+.spacer {
+    margin-right: 5px;
+}
+
+.Finalizar-pedido{
+    width: 100px;
+    background-color:#CC1233;
+    color: white;
+    border-radius: 10px;
+    margin: 20px;
+    border-color: black;
+}
+
+/*itens subcategoria*/
+section {
+    width: 800px;
+    overflow-x: auto;
+    max-width: 1000px;
+    margin-top: 100px;
+}
+
+section ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+section ul li {
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+section ul li:hover {
+    border-radius: 100%;
+    border: 6px solid #CC1233;
+    border-style: groove;
+    cursor: pointer;
+}
+
+#menu li.selected {
+    border: 6px solid #CC1233;
+}
+
+section ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Garante que o link ocupa toda a altura do círculo */
+}
+
+section ul li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.submenu {
+    display: none;
+    /* Adicione outros estilos conforme necessário */
+}
+
+/*Peças*/
+.content {
+    margin-left: 14px;
+    min-height: 10vh;
+}
+
+.content ul h2 {
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+.content ul {
+    list-style: none;
+    justify-content: center;
+    width: 500px;
+    flex: 1;
+}
+
+.content ul li {
+    width: 350px;
+    margin: 10px;
+    align-items: center;
+}
+
+.content ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    width: 200px;
+    color: black;
+}
+
+/*Carenagem Completa CB350i/400-Painel Frontal*/
+.imagem-hover {
+    display: none;
+    position: absolute;
+    width: 100px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    background-color: #fff;
+    margin-left: 100px;
+    margin-top: -40px;
+}
+
+.content ul li a:hover+.imagem-hover,
+.imagem-hover:hover {
+    display: block;
+}
+
+/*Carenagem Completa CB350i/400-Tampa do reagente*/
+.imagem-hover-1 {
+    display: none;
+    position: absolute;
+    width: 100px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    background-color: #fff;
+    margin-left: 135px;
+    margin-top: -40px;
+}
+
+.content ul li a:hover+.imagem-hover-1,
+.imagem-hover-1:hover {
+    display: block;
+}
+
+/*Carenagem Completa CB350i/400-Chapa traseira*/
+.imagem-hover-2 {
+    display: none;
+    position: absolute;
+    width: 100px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    background-color: #fff;
+    margin-left: 105px;
+    margin-top: -40px;
+}
+
+.content ul li a:hover+.imagem-hover-2,
+.imagem-hover-2:hover {
+    display: block;
+}
+
+/*Painel frontal lista CB350i/400i*/
+.content-sub {
+    text-align: left;
+    display: inline-flex;
+    padding: 10px;
+    padding-left: 50px;
+    border-color: #CC1233;
+    border-style: groove;
+    border-radius: 10px;
+    background-color: none;
+    width: 700px;
+}
+
+.title-image-content-sub h2 {
+    text-align: left;
+}
+
+.title-image-content-sub img {
+    width: 250px;
+}
+
+.lista-content-sub {
+    text-align: left;
+    padding-left: 10px;
+    padding: 25px;
+    font-size: 15px;
+}
+
+.lista-content-sub li {
+    padding: 5px;
+}
+
+#slider {
+    padding: 10px;
+}
+
+/*Rodapé*/
+footer {
+    margin-top: auto;
+
+}
+
+footer #footer-imagem ul {
+    display: inline-flex;
+    list-style: none;
+}
+
+footer #footer-imagem ul li a img {
+    width: 150px;
+    align-items: center;
+    padding: 15px;
+}
+
+#biotecnica {
+    margin-top: 23px;
+}
+
+#labitec {
+    margin-top: 35px;
+}
+
+#mindray {
+    margin-top: 19px;
+}
+
+#rayto {
+    margin-top: 38px;
+}
+
+#thermo {
+    margin-top: 25px;
+}
+
+footer #footer-imagem ul li img:hover {
+    border-radius: 10px;
+    border: 6px solid #CC1233;
+    border-style: groove;
+    cursor: pointer;
+}
+
+#footer-contato {
+    background-color: #CC1233;
+    text-align: left;
+    height: 150px;
+    text-align: center;
+}
+
+#footer-contato h3 {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#footer-contato ul{
+    display: inline-flex;
+    list-style: none;
+    margin-top: 10px;
+    
+}
+
+#footer-contato ul li{
+    margin-top: 60px;
+}
+
+#footer-contato ul li a {
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding-left: 50px;
+    display: inline-flex;
+    
+}
+
+

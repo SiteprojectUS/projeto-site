@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Pesquisa</title>
+    <style>
+        #search-suggestions {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #search-suggestions ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #search-suggestions li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #search-suggestions li:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar...">
+    <div id="search-suggestions">
+        <ul id="suggestion-list">
+            <!-- Sugestões serão adicionadas dinamicamente aqui -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    const searchInput = document.getElementById("search-input");
+    const suggestionList = document.getElementById("suggestion-list");
+    const searchSuggestions = document.getElementById("search-suggestions");
+
+    const suggestions = ["CB350i", "CB400i", "CM250", "CM320i", "CLIA900", "CLIA1000", "CMD600i"];
+
+    searchInput.addEventListener("input", function () {
+        const query = searchInput.value.toLowerCase();
+        const filteredSuggestions = suggestions.filter(suggestion =>
+            suggestion.toLowerCase().includes(query)
+        );
+
+        displaySuggestions(filteredSuggestions);
+    });
+
+    function displaySuggestions(filteredSuggestions) {
+        suggestionList.innerHTML = "";
+
+        filteredSuggestions.forEach(suggestion => {
+            const listItem = document.createElement("li");
+            listItem.textContent = suggestion;
+
+            listItem.addEventListener("click", function () {
+                searchInput.value = suggestion;
+                hideSuggestions();
+            });
+
+            suggestionList.appendChild(listItem);
+        });
+
+        if (filteredSuggestions.length > 0) {
+            showSuggestions();
+        } else {
+            hideSuggestions();
+        }
+    }
+
+    function showSuggestions() {
+        searchSuggestions.style.display = "block";
+    }
+
+    function hideSuggestions() {
+        searchSuggestions.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

@@ -183,3 +183,22 @@ function updateCounterDisplay(structureId) {
     var counterSpan = document.getElementById('counter' + structureId);
     counterSpan.textContent = clickCounters[structureId] + 'x';
 }
+
+//Slide//
+var radio = document.querySelector('manual-btn')
+
+document.getElementById('radio1').checked = true
+
+setInterval(()=> {
+    proximaImg()
+}, 5000)
+
+function proximaImg(){
+    cont++
+
+    if(cont > 3){
+        cont = 1
+    }
+    
+    document.getElementById('radio'+cont),checked = true
+}

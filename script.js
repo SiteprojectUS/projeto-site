@@ -185,20 +185,19 @@ function updateCounterDisplay(structureId) {
 }
 
 //Slide//
-var radio = document.querySelector('manual-btn')
+var slideIndex = 0;
+var slides = document.getElementsByClassName("mySlides");
+setInterval(function() {plusSlides(1)}, 5000); // Altere o valor 2000 para ajustar o intervalo de tempo (em milissegundos) entre os slides.
 
-document.getElementById('radio1').checked = true
-
-setInterval(()=> {
-    proximaImg()
-}, 5000)
-
-function proximaImg(){
-    cont++
-
-    if(cont > 3){
-        cont = 1
+function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    } else if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
     }
-    
-    document.getElementById('radio'+cont),checked = true
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex].style.display = "block";
 }

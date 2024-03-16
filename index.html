@@ -848,7 +848,15 @@
 <div id="order" style="display: none;">
     <h2>Lista de pedidos:</h2>
     <ul id="orderList"></ul>
-    <button class="Finalizar-pedido">Finalizar</button>
+    <button onclick="openModal()" class="Finalizar-pedido">Finalizar</button>
+</div>
+
+<div id="modal-container" class="modal-container">
+    <div class="modal">
+        <p>Realmente, deseja finalizar?</p>
+        <button class="fecharsim" id="fechar">Sim</button>
+        <button class="fechar" id="fechar">Não</button>
+    </div>
 </div>
 
 <section>

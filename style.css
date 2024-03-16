@@ -155,14 +155,20 @@ nav ul li:hover .sub-menu-1 ul li:hover {
     top: 80px;
     right: 0px;
     display: none;
-    flex-direction: column; /* Adicione esta linha para garantir que os itens empilhem verticalmente */
+    flex-direction: column;
+    /* Adicione esta linha para garantir que os itens empilhem verticalmente */
     padding: 5px;
+    z-index: 8888;
 }
+
 #orderList {
-    max-height: 300px; /* Defina uma altura máxima */
-    overflow-y: auto; /* Adicione rolagem vertical se necessário */
+    max-height: 300px;
+    /* Defina uma altura máxima */
+    overflow-y: auto;
+    /* Adicione rolagem vertical se necessário */
     padding: 10px;
-    margin: 0; /* Remova a margem padrão para evitar espaçamento indesejado */
+    margin: 0;
+    /* Remova a margem padrão para evitar espaçamento indesejado */
 }
 
 #order h2 {
@@ -170,34 +176,35 @@ nav ul li:hover .sub-menu-1 ul li:hover {
 }
 
 #order ul {
-    list-style-type: none; 
-    padding: 10px; 
+    list-style-type: none;
+    padding: 10px;
 }
 
 #order ul li {
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     padding: 10px;
     left: 0px;
- 
+
 
 }
 
 #order li {
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     padding: 5px;
     display: flex;
     align-items: center;
-    list-style: none; /* Remover os pontos de lista */
+    list-style: none;
+    /* Remover os pontos de lista */
     max-height: 300px;
 }
 
 .counter-style {
-    background-color: #4CAF50;  
-    color: white;               
-    padding: 4px 8px;           
-    border-radius: 4px; 
+    background-color: #4CAF50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
     padding: 5px;
-            
+
 }
 
 .counter-buttons {
@@ -216,16 +223,16 @@ nav ul li:hover .sub-menu-1 ul li:hover {
 
 .increase-button {
     font-size: 20px;
-    color: rgb(0, 51, 128); 
+    color: rgb(0, 51, 128);
 }
 
 .decrease-button {
-    font-size: 20px; 
-    color: red; 
+    font-size: 20px;
+    color: red;
 }
 
 .delete-button {
-    font-size: 10px; 
+    font-size: 10px;
     width: 27px;
     margin: 5px;
 
@@ -235,9 +242,9 @@ nav ul li:hover .sub-menu-1 ul li:hover {
     margin-right: 5px;
 }
 
-.Finalizar-pedido{
+.Finalizar-pedido {
     width: 100px;
-    background-color:#CC1233;
+    background-color: #CC1233;
     color: white;
     border-radius: 10px;
     margin: 20px;
@@ -479,14 +486,14 @@ footer #footer-imagem ul li img:hover {
     padding: 10px;
 }
 
-#footer-contato ul{
+#footer-contato ul {
     display: inline-flex;
     list-style: none;
     margin-top: 10px;
-    
+
 }
 
-#footer-contato ul li{
+#footer-contato ul li {
     margin-top: 60px;
 }
 
@@ -497,39 +504,40 @@ footer #footer-imagem ul li img:hover {
     font-size: 15px;
     padding-left: 50px;
     display: inline-flex;
-    
+
 }
 
-/*slides*/
+/*Slide*/
 .slideshow-container {
-        max-width: 800px;
-        position: relative;
-        margin: auto;
-    }
-    .mySlides {
-        display: none;
-    }
-    .mySlides img {
-        width: 100%;
-        height: auto;
-    }
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-    }
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-    }
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    padding-top: 15px;
+}
+.mySlides {
+    display: none;
+}
+.mySlides img {
+    width: 500px;
+    height: 350px;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

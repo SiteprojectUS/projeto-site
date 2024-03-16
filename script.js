@@ -185,7 +185,7 @@ function updateCounterDisplay(structureId) {
 }
 
 //Slide//
-var slideIndex = 0;
+var slideIndex = 1;
 var slides = document.getElementsByClassName("mySlides");
 setInterval(function() {plusSlides(1)}, 5000); // Altere o valor 2000 para ajustar o intervalo de tempo (em milissegundos) entre os slides.
 

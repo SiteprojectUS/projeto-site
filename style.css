@@ -245,10 +245,15 @@ nav ul li:hover .sub-menu-1 ul li:hover {
 .Finalizar-pedido {
     width: 100px;
     background-color: #CC1233;
-    color: white;
     border-radius: 10px;
     margin: 20px;
     border-color: black;
+    text-decoration: none;
+}
+
+.Finalizar-pedido a{
+    text-decoration: none;
+    color: white;
 }
 
 /*itens subcategoria*/
@@ -586,7 +591,7 @@ footer #footer-imagem ul li img:hover {
 .fecharsim{
     position: absolute;
     bottom: 40px;
-    right: 217px;
+    right: 219px;
     width: 30px;
     height: 30px;
     border-radius: 10px;

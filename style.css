@@ -251,6 +251,10 @@ nav ul li:hover .sub-menu-1 ul li:hover {
     text-decoration: none;
 }
 
+.adicionar img{
+    width: 40px;
+}
+
 .Finalizar-pedido a{
     text-decoration: none;
     color: white;
